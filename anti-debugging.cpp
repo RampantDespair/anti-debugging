@@ -21,6 +21,7 @@
 #include "Methods/MethodQPC.h"
 #include "Methods/MethodHeapFlag.h"
 #include "Methods/MethodLFH.h"
+#include "Methods/MethodWireShark.h"
 LRESULT CALLBACK WindowProcedure( HWND, UINT, WPARAM, LPARAM );
 
 void AddMenus( HWND hWnd );
@@ -168,6 +169,7 @@ void AddControls( HWND hWnd ) {
 	AddMethod( MethodGetLocalTime, "GetLocalTime Detection");
 	AddMethod( MethodGetTickCount, "GetTickCount Detection");
 	AddMethod(MethodQPC, "QueryPerformanceCounter Detection");
+    AddMethod(MethodWireShark, "WireShark Detection");
 
 	hLogo = CreateWindowA( "static", NULL, WS_VISIBLE | WS_CHILD | SS_BITMAP, -10, 0, 100, 100, hWnd, NULL, NULL, NULL );
 	SendMessageA( hLogo, STM_SETIMAGE, IMAGE_BITMAP, ( LPARAM )hLogoImage );
